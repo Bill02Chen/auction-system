@@ -73,7 +73,7 @@
 
 ### 3.2 MySQL连接池配置
 
-**文件位置**: [backend/src/config/mysql.js](file:///Users/bill/Desktop/platform1/backend/src/config/mysql.js)
+**文件位置**: [backend/src/config/mysql.js]
 
 ```javascript
 pool = mysql.createPool({
@@ -95,7 +95,7 @@ pool = mysql.createPool({
 
 ### 3.3 Redis客户端配置
 
-**文件位置**: [backend/src/config/redis.js](file:///Users/bill/Desktop/platform1/backend/src/config/redis.js)
+**文件位置**: [backend/src/config/redis.js]
 
 ```javascript
 redisClient = redis.createClient({
@@ -109,39 +109,6 @@ redisClient = redis.createClient({
 
 ---
 
-## 3.4 高并发性能测试工具
-
-系统内置完整的高并发性能测试套件，用于验证系统极限承压能力。
-
-**文件位置**: 
-- [backend/test-high-concurrency.js](file:///Users/bill/Desktop/platform1/backend/test-high-concurrency.js) - 性能测试主程序
-- [backend/setup-test-auction.js](file:///Users/bill/Desktop/platform1/backend/setup-test-auction.js) - 测试环境初始化脚本
-
-### 测试配置参数
-
-| 参数项 | 默认值 | 说明 |
-|-------|--------|------|
-| CONCURRENT_USERS | 1000 | 并发WebSocket连接数 |
-| BIDS_PER_USER | 3 | 每个用户出价次数 |
-| 预计总出价数 | 3000 | 总请求量 |
-
-### 测试报告输出指标
-
-- 总耗时（秒）
-- 总出价数 / 成功出价 / 失败出价
-- 成功率百分比
-- QPS（每秒成功出价数）
-- 延迟统计：平均延迟、P50、P95、P99延迟（毫秒）
-- 错误样本前10条展示
-
-### 使用流程
-
-```bash
-# 1. 初始化测试竞拍环境
-node setup-test-auction.js
-
-# 2. 运行高并发性能测试
-node test-high-concurrency.js
 ```
 
 ### 3.5 前端技术栈
@@ -157,7 +124,7 @@ node test-high-concurrency.js
 
 ### 3.6 前端沉浸式特效系统
 
-**文件位置**: [frontend/src/pages/LiveRoom.tsx](file:///Users/bill/Desktop/platform1/frontend/src/pages/LiveRoom.tsx)
+**文件位置**: [frontend/src/pages/LiveRoom.tsx]
 
 系统内置6大沉浸式特效，营造抖音直播竞拍的紧张刺激氛围：
 
@@ -179,9 +146,9 @@ node test-high-concurrency.js
 ### 3.7 管理后台完整功能体系
 
 **文件位置**: 
-- [frontend/src/pages/admin/AuctionManage.tsx](file:///Users/bill/Desktop/platform1/frontend/src/pages/admin/AuctionManage.tsx) - 商品管理
-- [frontend/src/pages/admin/OrderManage.tsx](file:///Users/bill/Desktop/platform1/frontend/src/pages/admin/OrderManage.tsx) - 订单管理
-- [frontend/src/pages/admin/AdminLayout.tsx](file:///Users/bill/Desktop/platform1/frontend/src/pages/admin/AdminLayout.tsx) - 主布局
+- [frontend/src/pages/admin/AuctionManage.tsx] - 商品管理
+- [frontend/src/pages/admin/OrderManage.tsx] - 订单管理
+- [frontend/src/pages/admin/AdminLayout.tsx] - 主布局
 
 #### 商品管理页面功能清单
 
@@ -220,8 +187,7 @@ node test-high-concurrency.js
 
 #### 发布新竞拍页面（AuctionCreate.tsx）
 
-**文件位置**: [frontend/src/pages/admin/AuctionCreate.tsx](file:///Users/bill/Desktop/platform1/frontend/src/pages/admin/AuctionCreate.tsx)
-
+**文件位置**: [frontend/src/pages/admin/AuctionCreate.tsx]
 **核心特性**:
 1. 分两栏表单布局：商品信息 + 竞拍规则配置
 2. 双模式图片上传：
@@ -249,7 +215,7 @@ node test-high-concurrency.js
 
 #### 实时竞拍监控页面（AuctionMonitor.tsx）
 
-**文件位置**: [frontend/src/pages/admin/AuctionMonitor.tsx](file:///Users/bill/Desktop/platform1/frontend/src/pages/admin/AuctionMonitor.tsx)
+**文件位置**: [frontend/src/pages/admin/AuctionMonitor.tsx]
 
 **核心特性**:
 1. 1秒自动刷新：每秒调用后端API获取最新状态，完全实时
@@ -271,7 +237,7 @@ node test-high-concurrency.js
 
 ### 4.1 AuctionService 核心类架构
 
-**文件位置**: [backend/src/services/auctionService.js](file:///Users/bill/Desktop/platform1/backend/src/services/auctionService.js)
+**文件位置**: [backend/src/services/auctionService.js]
 
 **构造函数真实实现**:
 ```javascript
@@ -647,7 +613,7 @@ CREATE TABLE orders (
 
 ### 8.2 智能数据初始化三模式
 
-**入口文件**: [backend/src/production-demo.js](file:///Users/bill/Desktop/platform1/backend/src/production-demo.js)
+**入口文件**: [backend/src/production-demo.js]
 
 **系统启动成功打印信息**:
 - 完整的系统横幅欢迎界面
@@ -666,7 +632,7 @@ CREATE TABLE orders (
 
 ### 8.3 管理员认证中间件
 
-**文件位置**: [backend/src/index.js](file:///Users/bill/Desktop/platform1/backend/src/index.js)
+**文件位置**: [backend/src/index.js]
 
 **真实实现**:
 ```javascript
@@ -744,7 +710,6 @@ const adminAuthMiddleware = async (req, res, next) => {
 ```env
 ADMIN_USERNAME=admin
 ADMIN_PASSWORD=admin123
-ADMIN_PASSWORD_SALT=auction_master_secure_salt_2024
 ```
 
 **登录流程**:
@@ -806,8 +771,7 @@ ADMIN_PASSWORD_SALT=auction_master_secure_salt_2024
 
 ### 9.5 用户侧「我的竞拍历史」完整功能
 
-**页面位置**: [frontend/src/pages/MyOrders.tsx](file:///Users/bill/Desktop/platform1/frontend/src/pages/MyOrders.tsx)
-
+**页面位置**: [frontend/src/pages/MyOrders.tsx]
 **核心特性**:
 1. 持久化用户身份: 使用 sessionStorage 保存 userId 和 userName，页面刷新不丢失
 2. Socket.IO 实时监听: 自动监听全局 `order:paid` 事件，收到后自动刷新列表
@@ -827,7 +791,7 @@ ADMIN_PASSWORD_SALT=auction_master_secure_salt_2024
 
 ### 9.6 管理员登录页面
 
-**页面位置**: [frontend/src/pages/AdminLogin.tsx](file:///Users/bill/Desktop/platform1/frontend/src/pages/AdminLogin.tsx)
+**页面位置**: [frontend/src/pages/AdminLogin.tsx]
 
 **核心特性**:
 - 深色渐变背景，抖音红品牌色
@@ -893,7 +857,7 @@ ADMIN_PASSWORD_SALT=auction_master_secure_salt_2024
 - 环境变量管理配置，不硬编码密钥
 - .env文件加入.gitignore，防止泄露
 - 物理删除前置条件校验，防止误删活跃数据
-- PBKDF2 + SHA256密码哈希，10000次迭代，自定义盐值
+- 密码哈希，10000次迭代，自定义盐值
 
 ---
 
