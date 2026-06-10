@@ -910,54 +910,6 @@ ADMIN_PASSWORD_SALT=auction_master_secure_salt_2024
 
 ---
 
-## 10.5 Docker Compose 本地一键开发环境
-
-**文件位置**: [docker-compose.yml](file:///Users/bill/Desktop/platform1/docker-compose.yml)
-
-**设计目标**: 零配置一键启动完整的本地开发环境，无需手动安装MySQL和Redis。
-
-**服务配置详情**:
-
-| 服务名 | 镜像版本 | 容器名 | 端口映射 | 数据持久化卷 | 健康检查 |
-|--------|---------|--------|---------|------------|---------|
-| mysql | mysql:8.3 | auction-master-mysql | 3307:3306 | mysql-data | 5秒间隔，最多重试10次 |
-| redis | redis:8.6.3 | auction-master-redis | 6379:6379 | redis-data | 3秒间隔，最多重试10次 |
-
-**MySQL配置**:
-- root密码: cyr020822
-- 默认数据库: auction_master
-- 时区: Asia/Shanghai
-- 字符集: utf8mb4 + utf8mb4_unicode_ci
-- 认证插件: mysql_native_password
-
-**Redis配置**:
-- AOF持久化开启: appendonly yes
-- 无密码: requirepass ""
-
-**一键启动命令**:
-```bash
-# 在项目根目录执行
-docker-compose up -d
-
-# 查看服务状态
-docker-compose ps
-
-# 查看日志
-docker-compose logs -f
-
-# 停止服务
-docker-compose down
-
-# 停止并删除数据卷（重置所有数据）
-docker-compose down -v
-```
-
-**网络配置**:
-- 自定义桥接网络: auction-network
-- 两个服务在同一网络内可直接通过服务名互相访问
-
----
-
 ## 13. 总结
 
 本技术架构是一个经过精心设计的高并发实时竞拍系统，具备以下核心优势：
