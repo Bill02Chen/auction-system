@@ -76,31 +76,12 @@ npm run dev
 - **商家/主播管理后台**: http://localhost:5173/admin
 - **健康检查**: http://localhost:3002/api/health
 
-### 方式二：轻量演示模式（无需Redis/MySQL）
-
-如果只想快速体验核心功能，无需安装数据库和缓存：
-
-```bash
-# 后端
-cd backend
-npm install
-node src/demo-mode.js
-
-# 前端（新开终端）
-cd frontend
-npm install
-npm run dev
-```
-
 ---
 
 ## 📁 项目目录结构
 
 ```
-auction_cloud/
-├── .trae/                          # Trae IDE配置目录
-│   └── documents/
-│       └── prd.md                  # 产品需求文档
+/
 ├── backend/                         # 后端服务
 │   ├── src/
 │   │   ├── config/
@@ -144,12 +125,9 @@ auction_cloud/
 │   ├── tailwind.config.js
 │   └── tsconfig.json
 ├── docker-compose.yml               # Docker Compose一键启动MySQL+Redis
-├── deploy.sh                        # 部署脚本
 ├── README.md                        # 本文件
 ├── TECHNICAL_ARCHITECTURE.md        # 深度技术架构文档
-├── PRODUCTION_DEMO_GUIDE.md         # 生产级演示完整指南
-├── CODE_WIKI.md                     # 完整代码Wiki文档
-└── DEPLOY_VOLCENGINE.md            # 火山引擎部署指南
+
 ```
 
 ---
@@ -165,7 +143,7 @@ auction_cloud/
 | MYSQL_HOST | localhost | MySQL主机地址 |
 | MYSQL_PORT | 3306 | MySQL端口 |
 | MYSQL_USER | root | MySQL用户名 |
-| MYSQL_PASSWORD | root123456 | MySQL密码 |
+| MYSQL_PASSWORD |  | MySQL密码 |
 | MYSQL_DATABASE | auction_master | MySQL数据库名 |
 | SEED_DEMO_DATA | auto | 演示数据生成模式：auto/force/never |
 | ADMIN_USERNAME | admin | 管理后台登录用户名 |
@@ -181,25 +159,6 @@ auction_cloud/
 | `never` | 正式生产运营 | 完全不自动生成任何演示数据，用户手动创建 |
 
 ---
-
-## 📊 预置演示商品清单
-
-系统自动预置12个带真实高清图片的竞拍商品，覆盖5大品类：
-
-| # | 商品名称 | 品类 | 起拍价 | 初始状态 |
-|---|---------|------|--------|---------|
-| 1 | 稀世珠宝 - 天然钻石项链 | 珠宝首饰 | ¥10,000 | active（活跃） |
-| 2 | 限量潮玩 - 艺术家联名手办 | 潮玩手办 | ¥500 | active（活跃） |
-| 3 | 古董收藏 - 清代青花瓷瓶 | 古董文玩 | ¥50,000 | active（活跃） |
-| 4 | 数码尖货 - 最新款限量版手机 | 数码藏品 | ¥8,000 | active（活跃） |
-| 5 | 奢华珠宝 - 天然红宝石戒指 | 珠宝首饰 | ¥30,000 | pending（待开始） |
-| 6 | 潮玩收藏 - 巨型限量公仔 | 潮玩手办 | ¥2,000 | pending（待开始） |
-| 7 | 古董字画 - 民国名家书法 | 古董文玩 | ¥80,000 | pending（待开始） |
-| 8 | 数码藏品 - 复古限量相机 | 数码藏品 | ¥5,000 | pending（待开始） |
-| 9 | 奢侈品箱包 - 经典款铂金包 | 奢侈品箱包 | ¥100,000 | pending（待开始） |
-| 10 | 潮流球鞋 - 限量联名款 | 潮流球鞋 | ¥3,000 | pending（待开始） |
-| 11 | 名贵腕表 - 经典机械表 | 名贵腕表 | ¥50,000 | pending（待开始） |
-| 12 | 艺术藏品 - 限量版画 | 艺术藏品 | ¥15,000 | pending（待开始） |
 
 ---
 
@@ -228,7 +187,7 @@ auction_cloud/
 ### 查看MySQL中的数据
 ```bash
 # 进入MySQL容器
-docker exec -it auction-master-mysql mysql -uroot -proot123456 auction_master
+docker exec -it auction-master-mysql mysql -uroot -p auction_master
 
 # 执行SQL查询
 SHOW TABLES;
@@ -245,26 +204,9 @@ docker exec -it auction-master-redis redis-cli
 # 查看所有auction相关的key
 KEYS auction:*
 
-# 查看某个竞拍的状态
-HGETALL auction:state:你的竞拍ID
 ```
 
 ---
-
-## 🧪 高并发性能测试
-
-系统内置完整的高并发性能测试套件，用于验证系统极限承压能力：
-
-```bash
-# 1. 初始化测试竞拍环境
-cd backend
-node setup-test-auction.js
-
-# 2. 运行高并发性能测试
-node test-high-concurrency.js
-```
-
-测试配置：1000并发WebSocket连接，每个用户出价3次，总计3000次出价。输出指标包括总耗时、成功率、QPS、平均延迟、P50/P95/P99延迟等。
 
 ---
 
@@ -284,9 +226,6 @@ node test-high-concurrency.js
 ## 📚 更多文档
 
 - [TECHNICAL_ARCHITECTURE.md](./TECHNICAL_ARCHITECTURE.md) - 深度技术架构文档，完整讲解四层分层、核心高并发机制、三大定时任务等
-- [PRODUCTION_DEMO_GUIDE.md](./PRODUCTION_DEMO_GUIDE.md) - 生产级演示完整使用指南
-- [CODE_WIKI.md](./CODE_WIKI.md) - 完整代码Wiki，所有模块职责、关键类与函数说明
-- [DEPLOY_VOLCENGINE.md](./DEPLOY_VOLCENGINE.md) - 火山引擎云服务器部署指南
 
 ---
 
