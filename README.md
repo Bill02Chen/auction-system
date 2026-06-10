@@ -21,7 +21,7 @@
 - **Node.js**: 16+ 
 - **Docker & Docker Compose**: 推荐用于快速启动MySQL和Redis
 
-### 生产级组件（可选）
+### 生产级组件
 - **MySQL**: 8.0+ 
 - **Redis**: 7.2+
 
@@ -97,8 +97,6 @@ npm run dev
 │   │   ├── production-demo.js     # 生产级演示模式入口
 │   │   └── socketServer.js        # Socket.IO WebSocket服务
 │   ├── init.sql                    # MySQL数据库初始化脚本
-│   ├── setup-test-auction.js        # 高并发测试环境初始化
-│   ├── test-high-concurrency.js   # 高并发性能测试脚本
 │   ├── .env                        # 环境变量配置
 │   ├── .env.example                # 环境变量模板
 │   └── package.json
