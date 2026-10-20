@@ -1,3 +1,4 @@
+require('./utils/logger');
 require('dotenv').config();
 const express = require('express');
 const http = require('http');
@@ -8,6 +9,7 @@ const { initRedis, getRedisClient } = require('./config/redis');
 const { initMySQL, getMySQLPool } = require('./config/mysql');
 const setupSocketServer = require('./socketServer');
 const AuctionService = require('./services/auctionService');
+const metrics = require('./utils/metrics');
 
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'admin';
 const ADMIN_PASSWORD_RAW = process.env.ADMIN_PASSWORD || 'admin123';
@@ -78,14 +80,28 @@ async function bootstrap() {
   app.get('/api/health', (req, res) => {
     res.json({ status: 'ok', timestamp: Date.now() });
   });
+
+  // 服务端侧指标。演示用公开端点；生产环境应加鉴权。
+  // reset=1 可清零计数，便于按轮次统计。
+  app.get('/api/metrics', (req, res) => {
+    if (req.query.reset === '1') {
+      metrics.reset();
+    }
+    res.json({
+      success: true,
+      data: {
+        ...metrics.snapshot(),
+        socketConnections: io.engine.clientsCount
+      }
+    });
+  });
   
   app.get('/api/auctions', async (req, res) => {
     try {
       const statusFilter = req.query.status;
       let auctions;
-      const pool = getMySQLPool();
       if (statusFilter) {
-        const [rows] = await pool.query(`SELECT * FROM auctions WHERE status = ? ORDER BY created_at DESC`, [statusFilter]);
+        const [rows] = await auctionService.mysql.query(`SELECT * FROM auctions WHERE status = ? ORDER BY created_at DESC`, [statusFilter]);
         auctions = rows;
       } else {
         auctions = await auctionService.getAllAuctions();
@@ -239,11 +255,8 @@ async function bootstrap() {
       const [ordersCount] = await pool.query(`SELECT COUNT(*) as count FROM orders`);
       const [activeAuctions] = await pool.query(`SELECT * FROM auctions WHERE status = 'active'`);
       
-      let redisKeys = [], redisActiveStates = [];
-      try { 
-        redisKeys = await redisClient.keys('auction:*'); 
-        redisActiveStates = await redisClient.keys('auction:state:*'); 
-      } catch(e) { /* NOPERM 跳过 */ }
+      const redisKeys = await redisClient.keys('auction:*');
+      const redisActiveStates = await redisClient.keys('auction:state:*');
       
       const inconsistencies = [];
       for (const mysqlAuction of activeAuctions) {
@@ -294,9 +307,8 @@ async function bootstrap() {
     try {
       const statusFilter = req.query.status;
       let auctions;
-      const pool = getMySQLPool();
       if (statusFilter) {
-        const [rows] = await pool.query(`SELECT * FROM auctions WHERE status = ? ORDER BY created_at DESC`, [statusFilter]);
+        const [rows] = await auctionService.mysql.query(`SELECT * FROM auctions WHERE status = ? ORDER BY created_at DESC`, [statusFilter]);
         auctions = rows;
       } else {
         auctions = await auctionService.getAllAuctions();

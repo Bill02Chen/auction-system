@@ -97,6 +97,25 @@ class RedisService {
     await this.redis.zAdd(key, { score: price, value: member });
   }
 
+  // 批量写入，用于从 bids 表回放排行榜。
+  async addToRankingBulk(auctionId, entries) {
+    const key = this.getAuctionRankingKey(auctionId);
+    if (entries.length === 0) return 0;
+    const multi = this.redis.multi();
+    entries.forEach((entry) => {
+      multi.zAdd(key, {
+        score: entry.price,
+        value: JSON.stringify({ userId: entry.userId, userName: entry.userName, userAvatar: entry.userAvatar })
+      });
+    });
+    await multi.exec();
+    return entries.length;
+  }
+
+  async clearRanking(auctionId) {
+    await this.redis.del(this.getAuctionRankingKey(auctionId));
+  }
+
   async getTopRanking(auctionId, topN = 10) {
     const key = this.getAuctionRankingKey(auctionId);
     const results = await this.redis.zRangeWithScores(key, -topN, -1);

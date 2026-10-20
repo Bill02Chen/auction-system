@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const API_BASE = window.location.protocol + '//' + window.location.host;
+const API_BASE = 'http://localhost:3002';
 const STORAGE_KEY_ADMIN_TOKEN = 'admin_token';
 
 const AdminLogin: React.FC = () => {

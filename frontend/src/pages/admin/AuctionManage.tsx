@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Auction } from '../../types';
 import { adminFetch } from './AdminLayout';
 
-const API_BASE = window.location.protocol + '//' + window.location.host;
+const API_BASE = 'http://localhost:3002';
 
 const statusLabels: Record<string, { label: string; color: string }> = {
   pending: { label: '待开始', color: 'bg-yellow-100 text-yellow-800' },

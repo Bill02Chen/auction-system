@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, Outlet, useNavigate, useLocation } from 'react-router-dom';
 
-const API_BASE = window.location.protocol + '//' + window.location.host;
+const API_BASE = 'http://localhost:3002';
 const STORAGE_KEY_ADMIN_TOKEN = 'admin_token';
 
 export const getAdminToken = () => localStorage.getItem(STORAGE_KEY_ADMIN_TOKEN) || '';
@@ -71,7 +71,7 @@ const AdminLayout: React.FC = () => {
     <div className="min-h-screen bg-gray-50 flex">
       <aside className="w-52 bg-gray-900 text-white flex flex-col">
         <div className="p-4 border-b border-gray-700">
-          <h1 className="text-lg font-bold">主播管理后台</h1>
+          <h1 className="text-lg font-bold">主播后台</h1>
         </div>
         <nav className="flex-1 p-3 space-y-1">
           {navItems.map((item) => (

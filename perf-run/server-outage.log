@@ -1,0 +1,2691 @@
+Starting Auction Master Backend...
+Redis Client Connected
+MySQL Pool Initialized
+🚀 Server running on http://localhost:3002
+📡 Socket.IO ready for high concurrent connections
+🎛️  Admin API ready at /api/admin
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+Client connected: uQ3dzlIGAONOMXNKAAAB
+User user_uQ3dzlIGAONOMXNKAAAB joined auction test-auction-001
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+Redis Client Error SocketClosedUnexpectedlyError: Socket closed unexpectedly
+    at Socket.<anonymous> (backend/node_modules/@redis/client/dist/lib/client/socket.js:194:118)
+    at Socket.wrapper (node:events:639:12)
+    at Socket.emit (node:events:514:28)
+    at TCP.<anonymous> (node:net:362:12)
+Redis Client Connected
+🔄 检测到MySQL中活跃但Redis不存在的竞拍，自动恢复状态: 高并发性能测试竞拍 (test-auction-001)
+💾 批量落盘完成: 已将 1 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+🔄 检测到MySQL中活跃但Redis不存在的竞拍，自动恢复状态: 高并发性能测试竞拍 (test-auction-001)
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+Client disconnected: uQ3dzlIGAONOMXNKAAAB
+Redis Client Error SocketClosedUnexpectedlyError: Socket closed unexpectedly
+    at Socket.<anonymous> (backend/node_modules/@redis/client/dist/lib/client/socket.js:194:118)
+    at Socket.wrapper (node:events:639:12)
+    at Socket.emit (node:events:514:28)
+    at TCP.<anonymous> (node:net:362:12)
+Redis Client Connected
+Redis Client Error SocketClosedUnexpectedlyError: Socket closed unexpectedly
+    at Socket.<anonymous> (backend/node_modules/@redis/client/dist/lib/client/socket.js:194:118)
+    at Socket.wrapper (node:events:639:12)
+    at Socket.emit (node:events:514:28)
+    at TCP.<anonymous> (node:net:362:12)
+Redis Client Error SocketClosedUnexpectedlyError: Socket closed unexpectedly
+    at Socket.<anonymous> (backend/node_modules/@redis/client/dist/lib/client/socket.js:194:118)
+    at Socket.wrapper (node:events:639:12)
+    at Socket.emit (node:events:514:28)
+    at TCP.<anonymous> (node:net:362:12)
+Redis Client Connected
+Redis Client Error SocketClosedUnexpectedlyError: Socket closed unexpectedly
+    at Socket.<anonymous> (backend/node_modules/@redis/client/dist/lib/client/socket.js:194:118)
+    at Socket.wrapper (node:events:639:12)
+    at Socket.emit (node:events:514:28)
+    at TCP.<anonymous> (node:net:362:12)
+Redis Client Error SocketClosedUnexpectedlyError: Socket closed unexpectedly
+    at Socket.<anonymous> (backend/node_modules/@redis/client/dist/lib/client/socket.js:194:118)
+    at Socket.wrapper (node:events:639:12)
+    at Socket.emit (node:events:514:28)
+    at TCP.<anonymous> (node:net:362:12)
+Redis Client Connected
+Redis Client Error SocketClosedUnexpectedlyError: Socket closed unexpectedly
+    at Socket.<anonymous> (backend/node_modules/@redis/client/dist/lib/client/socket.js:194:118)
+    at Socket.wrapper (node:events:639:12)
+    at Socket.emit (node:events:514:28)
+    at TCP.<anonymous> (node:net:362:12)
+Redis Client Error SocketClosedUnexpectedlyError: Socket closed unexpectedly
+    at Socket.<anonymous> (backend/node_modules/@redis/client/dist/lib/client/socket.js:194:118)
+    at Socket.wrapper (node:events:639:12)
+    at Socket.emit (node:events:514:28)
+    at TCP.<anonymous> (node:net:362:12)
+Redis Client Connected
+Redis Client Error SocketClosedUnexpectedlyError: Socket closed unexpectedly
+    at Socket.<anonymous> (backend/node_modules/@redis/client/dist/lib/client/socket.js:194:118)
+    at Socket.wrapper (node:events:639:12)
+    at Socket.emit (node:events:514:28)
+    at TCP.<anonymous> (node:net:362:12)
+Redis Client Error SocketClosedUnexpectedlyError: Socket closed unexpectedly
+    at Socket.<anonymous> (backend/node_modules/@redis/client/dist/lib/client/socket.js:194:118)
+    at Socket.wrapper (node:events:639:12)
+    at Socket.emit (node:events:514:28)
+    at TCP.<anonymous> (node:net:362:12)
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Connected
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 1 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+Client connected: 876vfEMwd8PUxRARAAAD
+User user_876vfEMwd8PUxRARAAAD joined auction test-auction-001
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 1 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 1 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 1 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+Redis Client Error SocketClosedUnexpectedlyError: Socket closed unexpectedly
+    at Socket.<anonymous> (backend/node_modules/@redis/client/dist/lib/client/socket.js:194:118)
+    at Socket.wrapper (node:events:639:12)
+    at Socket.emit (node:events:514:28)
+    at TCP.<anonymous> (node:net:362:12)
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Error AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1430:18)
+    at afterConnectMultiple (node:net:2099:7) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 6379
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:6379
+        at createConnectionError (node:net:2062:14)
+        at afterConnectMultiple (node:net:2092:16) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 6379
+    }
+  ]
+}
+Redis Client Connected
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+🔄 检测到MySQL中活跃但Redis不存在的竞拍，自动恢复状态: 高并发性能测试竞拍 (test-auction-001)
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL
+📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+💾 批量落盘完成: 已将 2 条出价记录从 Redis 同步到 MySQL
+💾 批量落盘完成: 已将 3 条出价记录从 Redis 同步到 MySQL

@@ -1,0 +1,18 @@
+[2026-10-10T16:55:53.855Z] Starting Auction Master Backend...
+[2026-10-10T16:55:53.867Z] Redis Client Connected
+[2026-10-10T16:55:53.873Z] 🔎 Redis 自检(启动): url=redis://127.0.0.1:6379 executable=/opt/homebrew/opt/redis/bin/redis-server pid=2995 port=6379 version=8.6.3 uptime=5382s
+[2026-10-10T16:55:53.874Z] MySQL Pool Initialized
+[2026-10-10T16:55:53.877Z] 🚀 Server running on http://localhost:3002
+[2026-10-10T16:55:53.877Z] 📡 Socket.IO ready for high concurrent connections
+[2026-10-10T16:55:53.877Z] 🎛️  Admin API ready at /api/admin
+[2026-10-10T16:56:03.892Z] 📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+[2026-10-10T16:56:08.933Z] 💾 批量落盘完成: 已将 28 条出价记录从 Redis 同步到 MySQL
+[2026-10-10T16:56:13.881Z] 📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+[2026-10-10T16:56:13.899Z] 💾 批量落盘完成: 已将 12 条出价记录从 Redis 同步到 MySQL
+[2026-10-10T16:56:23.882Z] 📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+[2026-10-10T16:56:41.621Z] 📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+[2026-10-10T16:56:42.630Z] 💾 批量落盘完成: 已将 999 条出价记录从 Redis 同步到 MySQL
+[2026-10-10T16:56:42.633Z] 💾 批量落盘完成: 已将 1000 条出价记录从 Redis 同步到 MySQL
+[2026-10-10T16:56:42.636Z] 💾 批量落盘完成: 已将 1001 条出价记录从 Redis 同步到 MySQL
+[2026-10-10T16:56:46.327Z] 📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+[2026-10-10T16:56:56.310Z] 📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL

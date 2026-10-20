@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { adminFetch } from './AdminLayout';
 
-const API_BASE = window.location.protocol + '//' + window.location.host;
+const API_BASE = 'http://localhost:3002';
 
 const MAX_IMAGE_SIZE = 400;
 const QUALITY = 0.7;

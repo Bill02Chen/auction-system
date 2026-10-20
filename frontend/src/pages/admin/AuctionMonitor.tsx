@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { adminFetch } from './AdminLayout';
 
-const API_BASE = window.location.protocol + '//' + window.location.host;
+const API_BASE = 'http://localhost:3002';
 
 interface MonitorAuction {
   id: string;

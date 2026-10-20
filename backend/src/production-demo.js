@@ -288,8 +288,7 @@ async function printSystemStats() {
   const [bidsCount] = await pool.query(`SELECT COUNT(*) as count FROM bids`);
   const [ordersCount] = await pool.query(`SELECT COUNT(*) as count FROM orders`);
   
-  let redisKeys = [];
-  try { redisKeys = await redisClient.keys('auction:*'); } catch(e) { /* NOPERM 跳过 */ }
+  const redisKeys = await redisClient.keys('auction:*');
   
   console.log('');
   console.log('====================================================================================================');
@@ -367,8 +366,8 @@ async function bootstrap() {
       const statusFilter = req.query.status;
       console.log(`收到竞拍列表查询请求，status筛选条件: ${statusFilter || '无'}`);
       let auctions;
-      const pool = getMySQLPool();
       if (statusFilter) {
+        const pool = getMySQLPool();
         const [rows] = await pool.query(`SELECT * FROM auctions WHERE status = ? ORDER BY created_at DESC`, [statusFilter]);
         auctions = rows;
       } else {
@@ -562,8 +561,8 @@ async function bootstrap() {
     try {
       const statusFilter = req.query.status;
       let auctions;
-      const pool = getMySQLPool();
       if (statusFilter) {
+        const pool = getMySQLPool();
         const [rows] = await pool.query(`SELECT * FROM auctions WHERE status = ? ORDER BY created_at DESC`, [statusFilter]);
         auctions = rows;
       } else {

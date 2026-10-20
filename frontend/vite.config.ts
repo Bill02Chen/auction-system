@@ -16,19 +16,5 @@ export default defineConfig({
         changeOrigin: true
       }
     }
-  },
-  build: {
-    outDir: 'dist',
-    sourcemap: false,
-    minify: 'esbuild',
-    chunkSizeWarningLimit: 500,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          socket: ['socket.io-client']
-        }
-      }
-    }
   }
 });

@@ -1,0 +1,17 @@
+2026-10-10T15:25:41Z === DRILL2 START ===
+2026-10-10T15:25:41Z baseline: redis_price=123 redis_zcard=5090 mysql_price=120.00
+2026-10-10T15:25:41Z --- P1: Redis 挂起 25 秒（CLIENT PAUSE ALL） ---
+2026-10-10T15:25:41Z P1 t0 发起 CLIENT PAUSE 25000 ALL
+OK
+2026-10-10T15:26:11Z P1 结束后 PING=PONG state=126 mysql=126.00
+2026-10-10T15:26:11Z --- P2: Redis 崩溃（SHUTDOWN NOSAVE）+ launchd 自动拉起 ---
+2026-10-10T15:26:11Z P2 t0 发起 SHUTDOWN NOSAVE
+2026-10-10T15:26:12Z P2 恢复：down≈1s，轮询次数=��恢复=是
+2026-10-10T15:26:27Z P2 恢复后 state=124 redis_zcard=5091 mysql=123.00
+2026-10-10T15:26:27Z --- P3: 数据丢失（删除该竞拍的 Redis 键） ---
+2026-10-10T15:26:27Z P3 删除前: redis_price=124 redis_zcard=5091 mysql_price=123.00
+2
+2026-10-10T15:26:28Z P3 自愈完成：state 重建耗时≈1s（轮询 3 次），重建后 redis_price=100.00 mysql_price=123.00
+2026-10-10T15:26:53Z P3 25 秒后: redis_price=112 redis_zcard=13 mysql_price=111.00
+2026-10-10T15:26:53Z P3 MySQL bids 表最高价: 144.00
+2026-10-10T15:26:53Z === DRILL2 END ===

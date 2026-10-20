@@ -2,12 +2,16 @@ const { v4: uuidv4 } = require('uuid');
 const { getMySQLPool } = require('../config/mysql');
 const RedisService = require('./redisService');
 const DistributedLock = require('../utils/distributedLock');
+const metrics = require('../utils/metrics');
+const BID_SCRIPT = require('../utils/bidScript');
 
 class AuctionService {
   constructor(redisClient) {
     this.mysql = getMySQLPool();
     this.redisService = new RedisService();
+    this.redis = redisClient;
     this.distributedLock = new DistributedLock(redisClient);
+    this.bidScriptSha = null;
   }
 
   async createAuction(auctionData) {
@@ -70,9 +74,76 @@ class AuctionService {
     return { ...auction, start_time: newStartTime, end_time: newEndTime };
   }
 
+  // 出价入口。默认走原子 Lua 脚本（#8）；BID_ENGINE=lock 可切回原来的抢锁实现做对比。
   async processBid(auctionId, userId, userName, userAvatar) {
+    const engine = process.env.BID_ENGINE || 'lua';
+    if (engine === 'lock') {
+      return this.processBidWithLock(auctionId, userId, userName, userAvatar);
+    }
+    return this.processBidAtomic(auctionId, userId, userName, userAvatar);
+  }
+
+  async loadBidScript() {
+    this.bidScriptSha = await this.redis.scriptLoad(BID_SCRIPT);
+    return this.bidScriptSha;
+  }
+
+  // 单次原子出价。Redis 串行执行脚本，因此并发出价会依次成交，而不是被拒绝。
+  async processBidAtomic(auctionId, userId, userName, userAvatar) {
+    if (!this.bidScriptSha) {
+      await this.loadBidScript();
+    }
+
+    const now = Date.now();
+    const bidId = uuidv4();
+    const keys = [
+      this.redisService.getAuctionStateKey(auctionId),
+      this.redisService.getAuctionRankingKey(auctionId),
+      this.redisService.getBidPendingQueueKey()
+    ];
+    const args = [
+      auctionId,
+      bidId,
+      userId,
+      userName || '神秘买家',
+      userAvatar || '',
+      String(now),
+      new Date(now).toISOString()
+    ];
+
+    let raw;
+    try {
+      raw = await this.redis.evalSha(this.bidScriptSha, { keys, arguments: args });
+    } catch (error) {
+      // 脚本缓存可能在 Redis 重启或 SCRIPT FLUSH 之后失效。
+      if (error && /NOSCRIPT/i.test(error.message || '')) {
+        await this.loadBidScript();
+        raw = await this.redis.evalSha(this.bidScriptSha, { keys, arguments: args });
+      } else {
+        throw error;
+      }
+    }
+
+    const result = JSON.parse(raw);
+    if (!result.ok) {
+      throw new Error(result.reason || '出价失败');
+    }
+
+    metrics.recordBidEngine('lua');
+    return {
+      success: true,
+      newPrice: result.newPrice,
+      newEndTime: result.newEndTime,
+      autoDelaySeconds: result.autoDelaySeconds || 15,
+      newRank: result.newRank,
+      message: '出价成功'
+    };
+  }
+
+  async processBidWithLock(auctionId, userId, userName, userAvatar) {
     const lockKey = this.redisService.getAuctionLockKey(auctionId);
-    
+    metrics.recordBidEngine('lock');
+
     return await this.distributedLock.withLock(lockKey, async () => {
       const state = await this.redisService.getAuctionState(auctionId);
       if (!state) {
@@ -142,9 +213,73 @@ class AuctionService {
     });
   }
 
+  // 从 bids 表回放排行榜。用于 Redis 数据丢失后的自愈：
+  // 心跳只重建了 auction:state，ZSet 排行榜若不回放，赢家会判不出来。
+  async rebuildRankingFromMySQL(auctionId) {
+    const [rows] = await this.mysql.query(
+      `SELECT user_id, ANY_VALUE(user_name) AS user_name, ANY_VALUE(user_avatar) AS user_avatar, MAX(price) AS price
+       FROM bids WHERE auction_id = ? GROUP BY user_id`,
+      [auctionId]
+    );
+
+    await this.redisService.clearRanking(auctionId);
+    if (rows.length === 0) return 0;
+
+    await this.redisService.addToRankingBulk(
+      auctionId,
+      rows.map((row) => ({
+        userId: row.user_id,
+        userName: row.user_name || '神秘买家',
+        userAvatar: row.user_avatar || '',
+        price: Number(row.price)
+      }))
+    );
+    return rows.length;
+  }
+
+  // 对账：Redis 价格 / MySQL current_price / bids 最高价 三者应一致。
+  // 返回不一致的描述数组，空数组表示一致。
+  async reconcilePrices(auction) {
+    const [rows] = await this.mysql.query(
+      `SELECT MAX(price) AS maxBid FROM bids WHERE auction_id = ?`,
+      [auction.id]
+    );
+    const maxBid = rows[0] && rows[0].maxBid !== null ? Number(rows[0].maxBid) : null;
+    if (maxBid === null) return [];
+
+    const state = await this.redisService.getAuctionState(auction.id);
+    const redisPrice = state ? Number(state.currentPrice) : null;
+    const mysqlPrice = Number(auction.current_price);
+    const problems = [];
+
+    if (redisPrice !== null && redisPrice < maxBid) {
+      problems.push(`Redis价格(${redisPrice}) < bids最高价(${maxBid})`);
+    }
+    if (mysqlPrice < maxBid) {
+      problems.push(`MySQL价格(${mysqlPrice}) < bids最高价(${maxBid})`);
+    }
+    return problems;
+  }
+
   async endAuction(auctionId) {
     const topRanking = await this.redisService.getTopRanking(auctionId, 1);
-    const winner = topRanking[0] || null;
+    let winner = topRanking[0] || null;
+
+    // 兜底：排行榜为空（例如 Redis 数据丢失且尚无新出价）时，从 bids 表判定赢家。
+    if (!winner) {
+      const [rows] = await this.mysql.query(
+        `SELECT user_id, user_name, price FROM bids WHERE auction_id = ? ORDER BY price DESC, created_at ASC LIMIT 1`,
+        [auctionId]
+      );
+      if (rows.length > 0) {
+        winner = {
+          userId: rows[0].user_id,
+          userName: rows[0].user_name || '神秘买家',
+          price: Number(rows[0].price)
+        };
+        console.log(`🧮 排行榜为空，已从 bids 表判定赢家: ${winner.userName} (${winner.price})`);
+      }
+    }
 
     await this.redisService.updateAuctionStatus(auctionId, 'ended');
     
@@ -162,9 +297,21 @@ class AuctionService {
       );
     }
 
+    // 延迟清理。必须先确认这个 ID 仍然是「已结束」状态：
+    // 否则用同一 ID 重新创建的竞拍，会在 60 秒后被上一次的定时器误删 Redis 状态。
     setTimeout(async () => {
-      await this.redisService.cleanupAuctionData(auctionId);
-      console.log(`🧹 竞拍数据已清理: ${auctionId}`);
+      try {
+        const [rows] = await this.mysql.query(`SELECT status FROM auctions WHERE id = ?`, [auctionId]);
+        const status = rows[0] && rows[0].status;
+        if (status === 'ended' || status === 'cancelled') {
+          await this.redisService.cleanupAuctionData(auctionId);
+          console.log(`🧹 竞拍数据已清理: ${auctionId}`);
+        } else {
+          console.log(`⏭️ 跳过清理（竞拍已是 ${status || '不存在的记录'}，可能被重新创建）: ${auctionId}`);
+        }
+      } catch (error) {
+        console.error('❌ 清理竞拍数据失败:', error.message);
+      }
     }, 60000);
 
     return winner;
@@ -267,7 +414,7 @@ class AuctionService {
 
       for (const [auctionId, finalPrice] of priceMap) {
         await connection.query(
-          `UPDATE auctions SET current_price = ? WHERE id = ?`,
+          `UPDATE auctions SET current_price = GREATEST(current_price, ?) WHERE id = ?`,
           [finalPrice, auctionId]
         );
       }

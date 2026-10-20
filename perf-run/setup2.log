@@ -1,0 +1,17 @@
+🔧 正在初始化测试环境...
+Redis Client Connected
+MySQL Pool Initialized
+🗑️  清理旧的测试数据...
+✨ 创建新的测试竞拍...
+📤 初始化Redis竞拍状态...
+✅ 测试环境准备完成！
+
+测试竞拍信息:
+  - ID: test-auction-001
+  - 初始价格: 100
+  - 最小加价: 1
+  - 封顶价格: 999999
+  - 状态: active
+  - 结束时间: 2026-10-10T16:08:00.128Z
+
+现在可以运行: node test-high-concurrency.js

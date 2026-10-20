@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { io, Socket } from 'socket.io-client';
 import { Auction, AuctionState, RankItem, BidData } from '../types';
 
-const API_BASE = window.location.protocol + '//' + window.location.host;
+const API_BASE = 'http://localhost:3002';
 
 type EffectType = 'lead' | 'overtaken' | 'congratulations';
 

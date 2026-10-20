@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Order } from '../../types';
 import { adminFetch } from './AdminLayout';
 
-const API_BASE = window.location.protocol + '//' + window.location.host;
+const API_BASE = 'http://localhost:3002';
 
 const orderStatusLabels: Record<string, { label: string; color: string }> = {
   pending_payment: { label: '待付款', color: 'bg-yellow-100 text-yellow-800' },

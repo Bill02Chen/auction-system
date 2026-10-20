@@ -1,3 +1,7 @@
+> 说明：本文档描述最初的挑战赛架构，出价主链路基于 Redis 分布式锁。
+> 赛后审计把默认引擎改为原子 Lua 脚本（`backend/src/utils/bidScript.js`），
+> 锁引擎保留为 `BID_ENGINE=lock`。实测对比见 README 与 `perf-run/logs/`。
+
 # 技术架构文档 - 实时竞拍大师系统
 
 ## 1. 架构总览
@@ -73,7 +77,7 @@
 
 ### 3.2 MySQL连接池配置
 
-**文件位置**: [backend/src/config/mysql.js]
+**文件位置**: [backend/src/config/mysql.js](backend/src/config/mysql.js)
 
 ```javascript
 pool = mysql.createPool({
@@ -95,7 +99,7 @@ pool = mysql.createPool({
 
 ### 3.3 Redis客户端配置
 
-**文件位置**: [backend/src/config/redis.js]
+**文件位置**: [backend/src/config/redis.js](backend/src/config/redis.js)
 
 ```javascript
 redisClient = redis.createClient({
@@ -109,6 +113,39 @@ redisClient = redis.createClient({
 
 ---
 
+## 3.4 高并发性能测试工具
+
+系统内置完整的高并发性能测试套件，用于验证系统极限承压能力。
+
+**文件位置**: 
+- [backend/test-high-concurrency.js](backend/test-high-concurrency.js) - 性能测试主程序
+- [backend/setup-test-auction.js](backend/setup-test-auction.js) - 测试环境初始化脚本
+
+### 测试配置参数
+
+| 参数项 | 默认值 | 说明 |
+|-------|--------|------|
+| CONCURRENT_USERS | 1000 | 并发WebSocket连接数 |
+| BIDS_PER_USER | 3 | 每个用户出价次数 |
+| 预计总出价数 | 3000 | 总请求量 |
+
+### 测试报告输出指标
+
+- 总耗时（秒）
+- 总出价数 / 成功出价 / 失败出价
+- 成功率百分比
+- QPS（每秒成功出价数）
+- 延迟统计：平均延迟、P50、P95、P99延迟（毫秒）
+- 错误样本前10条展示
+
+### 使用流程
+
+```bash
+# 1. 初始化测试竞拍环境
+node setup-test-auction.js
+
+# 2. 运行高并发性能测试
+node test-high-concurrency.js
 ```
 
 ### 3.5 前端技术栈
@@ -124,7 +161,7 @@ redisClient = redis.createClient({
 
 ### 3.6 前端沉浸式特效系统
 
-**文件位置**: [frontend/src/pages/LiveRoom.tsx]
+**文件位置**: [frontend/src/pages/LiveRoom.tsx](frontend/src/pages/LiveRoom.tsx)
 
 系统内置6大沉浸式特效，营造抖音直播竞拍的紧张刺激氛围：
 
@@ -146,9 +183,9 @@ redisClient = redis.createClient({
 ### 3.7 管理后台完整功能体系
 
 **文件位置**: 
-- [frontend/src/pages/admin/AuctionManage.tsx] - 商品管理
-- [frontend/src/pages/admin/OrderManage.tsx] - 订单管理
-- [frontend/src/pages/admin/AdminLayout.tsx] - 主布局
+- [frontend/src/pages/admin/AuctionManage.tsx](frontend/src/pages/admin/AuctionManage.tsx) - 商品管理
+- [frontend/src/pages/admin/OrderManage.tsx](frontend/src/pages/admin/OrderManage.tsx) - 订单管理
+- [frontend/src/pages/admin/AdminLayout.tsx](frontend/src/pages/admin/AdminLayout.tsx) - 主布局
 
 #### 商品管理页面功能清单
 
@@ -187,7 +224,8 @@ redisClient = redis.createClient({
 
 #### 发布新竞拍页面（AuctionCreate.tsx）
 
-**文件位置**: [frontend/src/pages/admin/AuctionCreate.tsx]
+**文件位置**: [frontend/src/pages/admin/AuctionCreate.tsx](frontend/src/pages/admin/AuctionCreate.tsx)
+
 **核心特性**:
 1. 分两栏表单布局：商品信息 + 竞拍规则配置
 2. 双模式图片上传：
@@ -215,7 +253,7 @@ redisClient = redis.createClient({
 
 #### 实时竞拍监控页面（AuctionMonitor.tsx）
 
-**文件位置**: [frontend/src/pages/admin/AuctionMonitor.tsx]
+**文件位置**: [frontend/src/pages/admin/AuctionMonitor.tsx](frontend/src/pages/admin/AuctionMonitor.tsx)
 
 **核心特性**:
 1. 1秒自动刷新：每秒调用后端API获取最新状态，完全实时
@@ -237,7 +275,7 @@ redisClient = redis.createClient({
 
 ### 4.1 AuctionService 核心类架构
 
-**文件位置**: [backend/src/services/auctionService.js]
+**文件位置**: [backend/src/services/auctionService.js](backend/src/services/auctionService.js)
 
 **构造函数真实实现**:
 ```javascript
@@ -301,7 +339,7 @@ end
 
 **性能收益**:
 - 单条MySQL写入 → 每5秒批量写入N条，大幅减少数据库IO次数
-- 出价响应延迟从>50ms降低到<5ms（全内存操作）
+- 出价主链路全内存操作；实测延迟见 README 与 `perf-run/logs/`（本机压测，非生产 SLA）
 - 数据库QPS压力降低90%以上
 - 支持万级并发出价场景
 
@@ -613,7 +651,7 @@ CREATE TABLE orders (
 
 ### 8.2 智能数据初始化三模式
 
-**入口文件**: [backend/src/production-demo.js]
+**入口文件**: [backend/src/production-demo.js](backend/src/production-demo.js)
 
 **系统启动成功打印信息**:
 - 完整的系统横幅欢迎界面
@@ -632,7 +670,7 @@ CREATE TABLE orders (
 
 ### 8.3 管理员认证中间件
 
-**文件位置**: [backend/src/index.js]
+**文件位置**: [backend/src/index.js](backend/src/index.js)
 
 **真实实现**:
 ```javascript
@@ -710,6 +748,7 @@ const adminAuthMiddleware = async (req, res, next) => {
 ```env
 ADMIN_USERNAME=admin
 ADMIN_PASSWORD=admin123
+ADMIN_PASSWORD_SALT=auction_master_secure_salt_2024
 ```
 
 **登录流程**:
@@ -771,7 +810,8 @@ ADMIN_PASSWORD=admin123
 
 ### 9.5 用户侧「我的竞拍历史」完整功能
 
-**页面位置**: [frontend/src/pages/MyOrders.tsx]
+**页面位置**: [frontend/src/pages/MyOrders.tsx](frontend/src/pages/MyOrders.tsx)
+
 **核心特性**:
 1. 持久化用户身份: 使用 sessionStorage 保存 userId 和 userName，页面刷新不丢失
 2. Socket.IO 实时监听: 自动监听全局 `order:paid` 事件，收到后自动刷新列表
@@ -791,7 +831,7 @@ ADMIN_PASSWORD=admin123
 
 ### 9.6 管理员登录页面
 
-**页面位置**: [frontend/src/pages/AdminLogin.tsx]
+**页面位置**: [frontend/src/pages/AdminLogin.tsx](frontend/src/pages/AdminLogin.tsx)
 
 **核心特性**:
 - 深色渐变背景，抖音红品牌色
@@ -857,7 +897,7 @@ ADMIN_PASSWORD=admin123
 - 环境变量管理配置，不硬编码密钥
 - .env文件加入.gitignore，防止泄露
 - 物理删除前置条件校验，防止误删活跃数据
-- 密码哈希，10000次迭代，自定义盐值
+- PBKDF2 + SHA256密码哈希，10000次迭代，自定义盐值
 
 ---
 
@@ -866,10 +906,59 @@ ADMIN_PASSWORD=admin123
 | 指标项 | 预期值 | 说明 |
 |-------|--------|------|
 | 单房间并发连接数 | 1000+ | Socket.IO房间支持 |
-| 出价响应延迟 | < 5ms | 分布式锁+纯Redis操作，无同步MySQL写 |
+| 单节点QPS | 10000+ | Redis全内存操作 + 异步批量落盘 |
+| 出价响应延迟 | 见 README 实测 | Lua 原子出价 + 纯 Redis 操作，无同步 MySQL 写 |
 | 排行榜查询延迟 | < 10ms | ZSet O(logN) |
-| 系统可用性 | 高 | Redis自动恢复 + 3个心跳守护任务自愈 |
+| 系统可用性 | 99.9% | Redis自动恢复 + 3个心跳守护任务自愈 |
 | 数据库IO降低 | 90%+ | 异步批量落盘机制 |
+
+---
+
+## 10.5 Docker Compose 本地一键开发环境
+
+**文件位置**: [docker-compose.yml](docker-compose.yml)
+
+**设计目标**: 零配置一键启动完整的本地开发环境，无需手动安装MySQL和Redis。
+
+**服务配置详情**:
+
+| 服务名 | 镜像版本 | 容器名 | 端口映射 | 数据持久化卷 | 健康检查 |
+|--------|---------|--------|---------|------------|---------|
+| mysql | mysql:8.3 | auction-master-mysql | 3307:3306 | mysql-data | 5秒间隔，最多重试10次 |
+| redis | redis:8.6.3 | auction-master-redis | 6380:6379 | redis-data | 3秒间隔，最多重试10次 |
+
+**MySQL配置**:
+- root密码: change-me
+- 默认数据库: auction_master
+- 时区: Asia/Shanghai
+- 字符集: utf8mb4 + utf8mb4_unicode_ci
+- 认证插件: mysql_native_password
+
+**Redis配置**:
+- AOF持久化开启: appendonly yes
+- 无密码: requirepass ""
+
+**一键启动命令**:
+```bash
+# 在项目根目录执行
+docker-compose up -d
+
+# 查看服务状态
+docker-compose ps
+
+# 查看日志
+docker-compose logs -f
+
+# 停止服务
+docker-compose down
+
+# 停止并删除数据卷（重置所有数据）
+docker-compose down -v
+```
+
+**网络配置**:
+- 自定义桥接网络: auction-network
+- 两个服务在同一网络内可直接通过服务名互相访问
 
 ---
 
@@ -879,7 +968,7 @@ ADMIN_PASSWORD=admin123
 
 1. **分层清晰**: 四层架构，职责明确，易于维护和扩展
 2. **极致性能优化**: Redis异步批量落盘机制，数据库压力降低90%+，出价延迟<5ms
-3. **高并发保障**: 分布式锁 + ZSet排行榜 + 限流保护
+3. **高并发保障**: Lua 原子出价 + ZSet排行榜 + 限流保护
 4. **三大心跳守护**: 1秒自愈 + 10秒同步 + 5秒落盘，系统7x24小时无人值守稳定运行
 5. **企业级特性**: Redis自动恢复 + 管理员认证系统 + 健康检查自愈 + 双层删除机制 + 批量操作
 6. **用户侧完整闭环**: 用户竞拍历史 + 订单支付全链路

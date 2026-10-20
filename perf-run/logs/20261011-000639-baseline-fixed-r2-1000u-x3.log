@@ -1,0 +1,188 @@
+===== 压测轮次 =====
+场景: baseline-fixed-r2
+并发用户数: 1000  每人出价次数: 3  预计总出价: 3000
+===== 环境指纹 =====
+采集时间: 2026-10-10T16:06:39Z（UTC） / 2026-10-11 00:06:39 HKT（本机）
+主机: local-machine
+系统: macOS 26.5.1 (Build 25F80) / arm64
+CPU: Apple M1 / 逻辑核 8
+内存: 8589934592 字节
+Node: v24.21.0 (~/.nvm/versions/node/v24.21.0/bin/node)
+npm: 11.19.0
+Docker: 29.5.2
+代码版本: 无提交 / 未提交改动文件数 65
+--- Redis（应用实际使用） ---
+  redis_version:8.6.3
+  process_id:2995
+  tcp_port:6379
+  uptime_in_seconds:2428
+  executable:/opt/homebrew/opt/redis/bin/redis-server
+  config_file:/opt/homebrew/etc/redis.conf
+  appendonly=yes
+  save=3600 1 300 100 60 10000
+  dir=/opt/homebrew/var/db/redis
+  keys=68
+--- MySQL ---
+  version=8.3.0
+  auctions=14 bids=2737
+--- 容器 ---
+auction-master-redis | redis:8.6.3 | 0.0.0.0:6380->6379/tcp, [::]:6380->6379/tcp
+auction-master-mysql | mysql:8.3 | 0.0.0.0:3307->3306/tcp, [::]:3307->3306/tcp
+===== 指纹结束 =====
+
+===== setup-test-auction.js =====
+🔧 正在初始化测试环境...
+Redis Client Connected
+MySQL Pool Initialized
+🗑️  清理旧的测试数据...
+🔎 Redis 自检(连接就绪): url=redis://127.0.0.1:6379 executable=/opt/homebrew/opt/redis/bin/redis-server pid=2995 port=6379 version=8.6.3 uptime=2429s
+✨ 创建新的测试竞拍...
+📤 初始化Redis竞拍状态...
+✅ 测试环境准备完成！
+
+测试竞拍信息:
+  - ID: test-auction-001
+  - 初始价格: 100
+  - 最小加价: 1
+  - 封顶价格: 999999
+  - 状态: active
+  - 结束时间: 2026-10-10T17:06:40.391Z
+
+现在可以运行: node test-high-concurrency.js
+SETUP_EXIT=0
+
+===== test-high-concurrency.js（并发 1000，每人 3 次） =====
+======================================================================
+🚀 高并发竞拍系统性能测试开始
+======================================================================
+配置参数:
+  - 服务端地址: http://localhost:3002
+  - 并发用户数: 1000
+  - 每用户出价次数: 3
+  - 预计总出价数: 3000
+======================================================================
+
+🔌 正在连接 1000 个客户端...
+❌ 客户端 848 连接失败: timeout
+❌ 客户端 849 连接失败: timeout
+❌ 客户端 850 连接失败: timeout
+❌ 客户端 851 连接失败: timeout
+❌ 客户端 852 连接失败: timeout
+❌ 客户端 853 连接失败: timeout
+❌ 客户端 854 连接失败: timeout
+❌ 客户端 855 连接失败: timeout
+❌ 客户端 856 连接失败: timeout
+❌ 客户端 857 连接失败: timeout
+❌ 客户端 858 连接失败: timeout
+❌ 客户端 859 连接失败: timeout
+❌ 客户端 860 连接失败: timeout
+❌ 客户端 861 连接失败: timeout
+❌ 客户端 862 连接失败: timeout
+❌ 客户端 863 连接失败: timeout
+❌ 客户端 864 连接失败: timeout
+❌ 客户端 865 连接失败: timeout
+❌ 客户端 866 连接失败: timeout
+❌ 客户端 867 连接失败: timeout
+❌ 客户端 868 连接失败: timeout
+❌ 客户端 869 连接失败: timeout
+❌ 客户端 870 连接失败: timeout
+❌ 客户端 871 连接失败: timeout
+❌ 客户端 872 连接失败: timeout
+❌ 客户端 874 连接失败: timeout
+❌ 客户端 875 连接失败: timeout
+❌ 客户端 876 连接失败: timeout
+❌ 客户端 877 连接失败: timeout
+❌ 客户端 878 连接失败: timeout
+❌ 客户端 879 连接失败: timeout
+❌ 客户端 880 连接失败: timeout
+❌ 客户端 881 连接失败: timeout
+❌ 客户端 882 连接失败: timeout
+❌ 客户端 883 连接失败: timeout
+❌ 客户端 884 连接失败: timeout
+❌ 客户端 885 连接失败: timeout
+❌ 客户端 886 连接失败: timeout
+❌ 客户端 887 连接失败: timeout
+❌ 客户端 888 连接失败: timeout
+❌ 客户端 889 连接失败: timeout
+❌ 客户端 890 连接失败: timeout
+❌ 客户端 891 连接失败: timeout
+❌ 客户端 892 连接失败: timeout
+❌ 客户端 893 连接失败: timeout
+❌ 客户端 894 连接失败: timeout
+❌ 客户端 941 连接失败: timeout
+❌ 客户端 943 连接失败: timeout
+❌ 客户端 944 连接失败: timeout
+❌ 客户端 945 连接失败: timeout
+❌ 客户端 946 连接失败: timeout
+❌ 客户端 947 连接失败: timeout
+❌ 客户端 948 连接失败: timeout
+❌ 客户端 949 连接失败: timeout
+❌ 客户端 950 连接失败: timeout
+❌ 客户端 951 连接失败: timeout
+❌ 客户端 952 连接失败: timeout
+❌ 客户端 953 连接失败: timeout
+❌ 客户端 954 连接失败: timeout
+❌ 客户端 955 连接失败: timeout
+❌ 客户端 956 连接失败: timeout
+❌ 客户端 965 连接失败: timeout
+❌ 客户端 967 连接失败: timeout
+❌ 客户端 968 连接失败: timeout
+❌ 客户端 969 连接失败: timeout
+❌ 客户端 970 连接失败: timeout
+❌ 客户端 971 连接失败: timeout
+❌ 客户端 972 连接失败: timeout
+❌ 客户端 973 连接失败: timeout
+❌ 客户端 974 连接失败: timeout
+❌ 客户端 975 连接失败: timeout
+❌ 客户端 976 连接失败: timeout
+❌ 客户端 977 连接失败: timeout
+❌ 客户端 978 连接失败: timeout
+❌ 客户端 979 连接失败: timeout
+❌ 客户端 980 连接失败: timeout
+❌ 客户端 981 连接失败: timeout
+❌ 客户端 982 连接失败: timeout
+❌ 客户端 983 连接失败: timeout
+❌ 客户端 984 连接失败: timeout
+❌ 客户端 985 连接失败: timeout
+❌ 客户端 986 连接失败: timeout
+❌ 客户端 987 连接失败: timeout
+❌ 客户端 988 连接失败: timeout
+❌ 客户端 989 连接失败: timeout
+❌ 客户端 990 连接失败: timeout
+❌ 客户端 991 连接失败: timeout
+❌ 客户端 992 连接失败: timeout
+❌ 客户端 993 连接失败: timeout
+❌ 客户端 994 连接失败: timeout
+❌ 客户端 995 连接失败: timeout
+❌ 客户端 996 连接失败: timeout
+❌ 客户端 997 连接失败: timeout
+❌ 客户端 998 连接失败: timeout
+❌ 客户端 999 连接失败: timeout
+✅ 所有客户端连接完成，共 905 个
+
+⚡ 开始发送高并发出价...
+准备发送 2715 个出价请求...
+✅ 所有出价请求发送完成
+
+======================================================================
+📊 性能测试报告
+======================================================================
+总耗时: 151.07 秒
+总出价数: 2715
+成功出价: 2714
+失败出价: 1
+成功率: 99.96%
+QPS (每秒成功出价): 17.97
+
+延迟统计 (毫秒):
+  - 平均延迟: 8.68 ms
+  - P50 延迟: 8 ms
+  - P95 延迟: 14 ms
+  - P99 延迟: 22 ms
+
+错误样本 (前10条):
+  1. 出价失败 - 用户:测试用户80: 获取分布式锁失败，系统繁忙，请稍后重试
+======================================================================
+
+🧹 所有客户端已断开连接
+TEST_EXIT=0

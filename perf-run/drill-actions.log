@@ -1,0 +1,37 @@
+2026-10-10T15:20:48Z === DRILL START ===
+2026-10-10T15:20:49Z baseline redis state: 111 | ranking zcard: 5078 | mysql: 110.00
+2026-10-10T15:20:49Z --- PHASE A: 进程宕机（数据保留） ---
+2026-10-10T15:20:49Z A1 执行 brew services stop redis
+Warning: cask_tap_migrations.jws.json: update failed, falling back to cached version.
+Warning: formula_tap_migrations.jws.json: update failed, falling back to cached version.
+✘ JSON API formula_tap_migrations.jws.json
+Error: Operation not permitted @ apply2files - ~/Library/Caches/Homebrew/api/formula_tap_migrations.jws.json
+✘ JSON API cask_tap_migrations.jws.json
+Error: Operation not permitted @ apply2files - ~/Library/Caches/Homebrew/api/cask_tap_migrations.jws.json
+Stopping `redis`... (might take a while)
+Error: Operation not permitted @ apply2files - ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
+2026-10-10T15:21:00Z A2 停止返回，等待 20 秒（模拟宕机中）
+2026-10-10T15:21:20Z A3 宕机中 PING: PONG
+2026-10-10T15:21:20Z A4 执行 brew services start redis
+Warning: formula_tap_migrations.jws.json: update failed, falling back to cached version.
+Warning: cask_tap_migrations.jws.json: update failed, falling back to cached version.
+✘ JSON API formula_tap_migrations.jws.json
+Error: Operation not permitted @ apply2files - ~/Library/Caches/Homebrew/api/formula_tap_migrations.jws.json
+✘ JSON API cask_tap_migrations.jws.json
+Error: Operation not permitted @ apply2files - ~/Library/Caches/Homebrew/api/cask_tap_migrations.jws.json
+Error: Operation not permitted @ apply2files - ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
+2026-10-10T15:21:28Z A5 启动后 PING: PONG
+2026-10-10T15:21:28Z A6 启动后 state: 114 | ranking zcard: 15
+2026-10-10T15:21:28Z A7 等待 45 秒观察恢复
+2026-10-10T15:22:13Z A8 恢复后 mysql: 135.00
+2026-10-10T15:22:13Z --- PHASE B: 数据丢失（模拟宕机后无持久化） ---
+2026-10-10T15:22:14Z B1 删除前 state: 136 | mysql: 135.00
+2026-10-10T15:22:14Z B2 删除 test-auction-001 的 Redis 键（state + ranking）
+2
+2026-10-10T15:22:14Z B3 删除后立刻 state 存在性: 0
+2026-10-10T15:22:14Z B4 等待 30 秒观察自愈
+2026-10-10T15:22:44Z B5 自愈后 state: id test-auction-001 name 高并发性能测试竞拍 currentPrice 113 startPrice 100.00 minIncrement 1.00 maxPrice 999999.00 endTime 1791649137000 status active autoDelaySeconds 15 
+2026-10-10T15:22:44Z B6 自愈后 ranking zcard: 14 | mysql: 112.00
+2026-10-10T15:22:44Z B7 等待 20 秒观察探针出价后的价格
+2026-10-10T15:23:04Z B8 state: 123 | mysql: 122.00
+2026-10-10T15:23:04Z === DRILL END ===

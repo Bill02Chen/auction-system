@@ -1,8 +1,44 @@
-# This is not a complete file, please finish based on your own situation
 
 services:
   mysql:
+    image: mysql:8.3
+    container_name: auction-master-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-change-me}
+      MYSQL_DATABASE: auction_master
+      TZ: Asia/Shanghai
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p$${MYSQL_ROOT_PASSWORD}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - auction-network
+
   redis:
+    image: redis:8.6.3
+    container_name: auction-master-redis
+    # 宿主端口用 6380，不要用 6379。
+    # 原因：容器只能绑定 *:6379。若宿主机已有 Redis 监听 127.0.0.1:6379，
+    # 应用连 6379 时走的是宿主 Redis；宿主 Redis 一停，连接会静默落到空容器。
+    # 用 6380 后，6379 只有一个候选实例，故障会显式暴露。
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes --requirepass ""
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 3s
+      retries: 10
+    networks:
+      - auction-network
 
 volumes:
   mysql-data:

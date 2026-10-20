@@ -1,0 +1,22 @@
+[2026-10-10T16:36:54.856Z] Starting Auction Master Backend...
+[2026-10-10T16:36:54.865Z] Redis Client Connected
+[2026-10-10T16:36:54.869Z] 🔎 Redis 自检(启动): url=redis://127.0.0.1:6379 executable=/opt/homebrew/opt/redis/bin/redis-server pid=2995 port=6379 version=8.6.3 uptime=4243s
+[2026-10-10T16:36:54.869Z] MySQL Pool Initialized
+[2026-10-10T16:36:54.873Z] 🚀 Server running on http://localhost:3002
+[2026-10-10T16:36:54.873Z] 📡 Socket.IO ready for high concurrent connections
+[2026-10-10T16:36:54.873Z] 🎛️  Admin API ready at /api/admin
+[2026-10-10T16:37:04.883Z] 📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+[2026-10-10T16:37:14.878Z] 📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+[2026-10-10T16:37:24.881Z] 📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+[2026-10-10T16:37:34.885Z] 📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+[2026-10-10T16:37:44.879Z] 📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+[2026-10-10T16:37:54.881Z] 📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+[2026-10-10T16:38:00.865Z] ⏭️ 跳过清理（竞拍已是 active，可能被重新创建）: test-auction-001
+[2026-10-10T16:38:04.880Z] 📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+[2026-10-10T16:38:14.882Z] 📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+[2026-10-10T16:38:24.883Z] 📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+[2026-10-10T16:38:34.889Z] 📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+[2026-10-10T16:38:44.884Z] 📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+[2026-10-10T16:38:54.882Z] 📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+[2026-10-10T16:39:04.886Z] 📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+[2026-10-10T16:39:14.884Z] 📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL

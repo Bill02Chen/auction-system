@@ -1,0 +1,17 @@
+[2026-10-10T16:24:32.609Z] Starting Auction Master Backend...
+[2026-10-10T16:24:32.618Z] Redis Client Connected
+[2026-10-10T16:24:32.622Z] 🔎 Redis 自检(启动): url=redis://127.0.0.1:6379 executable=/opt/homebrew/opt/redis/bin/redis-server pid=2995 port=6379 version=8.6.3 uptime=3501s
+[2026-10-10T16:24:32.622Z] MySQL Pool Initialized
+[2026-10-10T16:24:32.627Z] 🚀 Server running on http://localhost:3002
+[2026-10-10T16:24:32.627Z] 📡 Socket.IO ready for high concurrent connections
+[2026-10-10T16:24:32.628Z] 🎛️  Admin API ready at /api/admin
+[2026-10-10T16:24:42.631Z] 📝 批量同步完成: 已同步 1 个活跃竞拍的 endTime 到 MySQL
+backend/src/socketServer.js:125
+        socket.emit('bid:error', { message: error.message, bidId });
+                                                           ^
+
+ReferenceError: bidId is not defined
+    at Socket.<anonymous> (backend/src/socketServer.js:125:60)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+Node.js v24.21.0

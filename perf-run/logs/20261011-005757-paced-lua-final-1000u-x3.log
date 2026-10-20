@@ -1,0 +1,198 @@
+===== 压测轮次 =====
+场景: paced-lua-final
+并发用户数: 1000  每人出价次数: 3  预计总出价: 3000
+发送节奏: 50 ms/次
+提示: 压测前用 QUIET_SOCKET_LOG=1 启动后端，避免逐连接同步日志影响结果
+===== 环境指纹 =====
+采集时间: 2026-10-10T16:57:57Z（UTC） / 2026-10-11 00:57:57 HKT（本机）
+主机: local-machine
+系统: macOS 26.5.1 (Build 25F80) / arm64
+CPU: Apple M1 / 逻辑核 8
+内存: 8589934592 字节
+Node: v24.21.0 (~/.nvm/versions/node/v24.21.0/bin/node)
+npm: 11.19.0
+Docker: 29.5.2
+代码版本: 无提交 / 未提交改动文件数 65
+--- Redis（应用实际使用） ---
+  redis_version:8.6.3
+  process_id:2995
+  tcp_port:6379
+  uptime_in_seconds:5506
+  executable:/opt/homebrew/opt/redis/bin/redis-server
+  config_file:/opt/homebrew/etc/redis.conf
+  appendonly=yes
+  save=3600 1 300 100 60 10000
+  dir=/opt/homebrew/var/db/redis
+  keys=73
+--- MySQL ---
+  version=8.3.0
+  auctions=14 bids=3043
+--- 容器 ---
+auction-master-redis | redis:8.6.3 | 0.0.0.0:6380->6379/tcp, [::]:6380->6379/tcp
+auction-master-mysql | mysql:8.3 | 0.0.0.0:3307->3306/tcp, [::]:3307->3306/tcp
+===== 指纹结束 =====
+
+===== setup-test-auction.js =====
+🔧 正在初始化测试环境...
+Redis Client Connected
+🔎 Redis 自检(启动): url=redis://127.0.0.1:6379 executable=/opt/homebrew/opt/redis/bin/redis-server pid=2995 port=6379 version=8.6.3 uptime=5507s
+MySQL Pool Initialized
+🗑️  清理旧的测试数据...
+🧹 已清理 Redis 排行榜与在线集合
+✨ 创建新的测试竞拍...
+📤 初始化Redis竞拍状态...
+✅ 测试环境准备完成！
+
+测试竞拍信息:
+  - ID: test-auction-001
+  - 初始价格: 100
+  - 最小加价: 1
+  - 封顶价格: 999999
+  - 状态: active
+  - 结束时间: 2026-10-10T17:57:58.418Z
+
+现在可以运行: node test-high-concurrency.js
+SETUP_EXIT=0
+
+===== 服务端指标（压测前，已清零） =====
+{
+  "success": true,
+  "data": {
+    "uptimeSeconds": 0,
+    "bids": {
+      "total": 0,
+      "success": 0,
+      "error": 0,
+      "successRate": null,
+      "byReason": {},
+      "latencyMs": {
+        "samples": 0,
+        "avg": null,
+        "p50": null,
+        "p95": null,
+        "p99": null,
+        "max": null
+      }
+    },
+    "lock": {
+      "attempts": 0,
+      "retries": 0,
+      "exhausted": 0
+    },
+    "bidEngine": {
+      "lua": 0,
+      "lock": 0
+    },
+    "connections": {
+      "total": 0,
+      "current": 0,
+      "max": 0
+    },
+    "broadcasts": {
+      "events": 0,
+      "messages": 0
+    },
+    "rateLimited": 0,
+    "eventLoopDelayMs": {
+      "mean": null,
+      "p99": 0,
+      "max": 0
+    },
+    "rssMb": 77,
+    "socketConnections": 0
+  }
+}
+
+===== test-high-concurrency.js（并发 1000，每人 3 次，节奏 50 ms） =====
+======================================================================
+🚀 高并发竞拍系统性能测试开始
+======================================================================
+配置参数:
+  - 服务端地址: http://localhost:3002
+  - 并发用户数: 1000
+  - 每用户出价次数: 3
+  - 预计总出价数: 3000
+  - 发送节奏: 50 ms/次
+======================================================================
+
+🔌 正在连接 1000 个客户端...
+✅ 所有客户端连接完成，共 1000 个
+
+⚡ 开始发送高并发出价...
+准备发送 3000 个出价请求...
+✅ 所有出价请求发送完成
+
+⏳ 收尾等待 9000 ms（覆盖 8000 ms 的出价超时阈值）...
+
+======================================================================
+📊 性能测试报告
+======================================================================
+总耗时: 170.87 秒
+连接成功: 1000 / 1000
+连接失败: 0
+总出价数: 3000（未决: 0）
+成功出价: 3000
+失败出价: 0
+成功率: 100.00%（分母=总出价数）
+端到端成功率: 100.00%（分母=计划总出价数）
+QPS (每秒成功出价): 17.56
+
+延迟统计 (毫秒):
+  - 平均延迟: 9.32 ms
+  - P50 延迟: 8 ms
+  - P95 延迟: 16 ms
+  - P99 延迟: 49 ms
+
+======================================================================
+
+🧹 所有客户端已断开连接
+TEST_EXIT=0
+
+===== 服务端指标（压测后） =====
+{
+  "success": true,
+  "data": {
+    "uptimeSeconds": 172.6,
+    "bids": {
+      "total": 3000,
+      "success": 3000,
+      "error": 0,
+      "successRate": 100,
+      "byReason": {},
+      "latencyMs": {
+        "samples": 3000,
+        "avg": 8.44,
+        "p50": 7,
+        "p95": 12,
+        "p99": 31,
+        "max": 207
+      }
+    },
+    "lock": {
+      "attempts": 0,
+      "retries": 0,
+      "exhausted": 0
+    },
+    "bidEngine": {
+      "lua": 3000,
+      "lock": 0
+    },
+    "connections": {
+      "total": 1000,
+      "current": 0,
+      "max": 1000
+    },
+    "broadcasts": {
+      "events": 5010,
+      "messages": 5010000
+    },
+    "rateLimited": 0,
+    "eventLoopDelayMs": {
+      "mean": 12.39,
+      "p99": 27.49,
+      "max": 1546.65
+    },
+    "rssMb": 314.2,
+    "socketConnections": 0
+  }
+}
