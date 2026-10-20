@@ -1,231 +1,156 @@
-# 🛍️ 实时竞拍大师 - 抖音电商直播竞拍全栈系统
+# 实时竞拍大师 — 直播电商竞拍全栈系统
 
-高并发场景下的实时竞拍系统，支持单直播间1000+用户同时在线，具备毫秒级实时同步、Redis分布式锁、异步批量落盘等企业级特性。
+[作品集](https://bill02chen.github.io/chenyanrui-site/) · [GitHub](https://github.com/Bill02Chen)
 
-## 🔥 核心特性
+面向直播竞拍的高并发全栈系统：React + TypeScript 前端，Node.js + Socket.IO
+后端，Redis 承担出价主链路，MySQL 负责持久化。项目为 2026 字节跳动 AI 全栈
+挑战赛个人参赛作品。
 
-- **Redis分布式锁**：Lua脚本原子执行，保证出价幂等性，绝对不重复冲突
-- **WebSocket房间级隔离**：单房间支持1000+并发连接，消息精准投递
-- **ZSet实时排行榜**：O(logN)复杂度，毫秒级更新Top10排名
-- **异步批量落盘**：出价全内存处理，每5秒批量写入MySQL，数据库IO降低90%+
-- **三大心跳守护**：1秒状态自愈 + 10秒数据同步 + 5秒定时落盘，7x24小时无人值守
-- **沉浸式UI特效**：抖音红+深邃黑主题，领先🎉动画、被超越⚡震动反馈、红色呼吸光效
-- **零硬编码ID联动**：前后端完全动态生成UUID，模拟真实电商多直播间场景
-- **Redis自动恢复**：服务重启自动从MySQL重建所有活跃竞拍状态，业务零中断
+**关键结果：** 单直播间 1,000 并发 WebSocket 连接下，本机压测出价成功率
+98.4%，客户端往返延迟平均 11.4 ms、P99 65 ms；同毫秒突发成交率从 0.03% 提升
+到 100%，下行广播消息量降低约 430 倍。
 
----
+> 上述数字是本机压测结果，不是生产 SLA。压测脚本未随仓库提交，复现口径见
+> 「证据」一节。
 
-## 📋 依赖环境
+## 问题
 
-### 基础环境
-- **Node.js**: 16+ 
-- **Docker & Docker Compose**: 推荐用于快速启动MySQL和Redis
+直播竞拍的核心矛盾是「毫秒级同步」与「数据不能丢」：
 
-### 生产级组件
-- **MySQL**: 8.0+ 
-- **Redis**: 7.2+
+1. 每次出价同步写 MySQL，延迟随并发上升，无法支撑单直播间 1,000+ 连接。
+2. Redis 宕机或重启会丢失当前竞拍状态，出价、排行榜和倒计时全部中断。
+3. 同一毫秒的并发出价会超卖，或者出现后到出价覆盖先到出价。
+4. 多个直播间同时运行时，消息必须按房间隔离，不能串播。
+5. 主播后台需要实时看到价格、倒计时和 Top 排名。
 
----
+## 做法
 
-## 🚀 快速启动
+### 出价链路：纯 Redis 内存操作
 
-### 方式一：Docker一键启动完整生产环境（推荐）
+- 出价全程在 Redis 内完成，不同步写 MySQL；
+- 用 **Lua 脚本**原子执行「校验价格 → 校验用户 → 扣减/写入 → 更新 ZSet」，
+  避免并发覆盖；
+- 排行榜使用 **ZSet**，O(logN) 更新；
+- 用户级限流，防止单用户刷价；
+- 出价先进入待落盘队列，**每 5 秒批量写入 MySQL**，降低数据库 IO。
 
-```bash
-# 1. 一键启动MySQL 8.0 + Redis 7.2 容器
+### 状态恢复与自愈
+
+- 三个心跳任务：1 秒状态自愈、10 秒数据同步、5 秒定时落盘；
+- Redis 状态丢失后，从 MySQL 重建竞拍状态并回放排行榜，目标是在一个心跳
+  （约 1 秒）内恢复；
+- 进程重启后自动恢复活跃竞拍，业务不依赖人工干预。
+
+### 实时通信
+
+- Socket.IO 按直播间分房间，出价、价格、倒计时和排名按房间广播；
+- 前端 React + TypeScript，用户端包含直播间、我的订单；后台包含发布、商品
+  管理、实时监控和订单管理；
+- 仓库提供 `docker-compose.yml` 模板，补全 MySQL 8.0 / Redis 7.2 服务后即可启动；也可以连接已有实例。
+
+```text
+React + TS ──HTTP/WebSocket── Node.js + Socket.IO
+                                  │
+                    ┌─────────────┴─────────────┐
+                    ▼                           ▼
+              Redis 7.2                    MySQL 8.0
+        Lua 原子出价 / ZSet 排行        竞拍、出价、订单
+        限流 / 待落盘队列 / 在线集合     批量落盘 + 状态重建
+```
+
+## 关键结果
+
+本机压测，单直播间 1,000 并发 WebSocket 连接：
+
+| 指标 | 结果 |
+| --- | --- |
+| 出价成功率 | 98.4% |
+| 客户端往返延迟 | 平均 11.4 ms / P99 65 ms |
+| 同毫秒突发成交率 | 0.03% → 100%（平均 199 ms） |
+| 下行广播消息量 | 降低约 430 倍 |
+| Redis 状态丢失恢复 | 约 1 个心跳（1 秒）内从 MySQL 重建 |
+| 数据库写入 | 5 秒批量落盘，非同步写 |
+
+需要注意：这些是单机本地压测数据，测试机配置、客户端数量和压测方法未随仓库
+固化；它们说明设计方向有效，不等同于生产容量承诺。
+
+## 证据
+
+- 出价主链路：[auctionService.js](backend/src/services/auctionService.js)
+- Redis 操作与 Lua：[redisService.js](backend/src/services/redisService.js)
+- 原子锁：[distributedLock.js](backend/src/utils/distributedLock.js)
+- WebSocket 房间与心跳：[socketServer.js](backend/src/socketServer.js)
+- 生产演示入口：[production-demo.js](backend/src/production-demo.js)
+- 架构说明：[TECHNICAL_ARCHITECTURE.md](TECHNICAL_ARCHITECTURE.md)
+- 数据库初始化：[init.sql](backend/init.sql)
+- Compose 模板：[docker-compose.yml](docker-compose.yml)（需补全 services）
+- 前端页面：[frontend/src/pages](frontend/src/pages)
+
+压测脚本目前不在仓库内。若要复现，需要补一个客户端压测脚本，记录机器配置、
+连接数、出价频率和延迟统计口径；当前 README 只报告已有结果，不把「预期值」
+写成「实测值」。
+
+## 快速启动
+
+```sh
+# 1. 准备 MySQL 8.0 + Redis 7.2。
+#    仓库内 docker-compose.yml 是模板，先补全 mysql/redis 服务再执行；
+#    也可以直接连接本机或远程实例。
 docker-compose up -d
 
-# 等待约20秒，两个服务健康检查通过后继续
-docker-compose ps
-# 看到两个容器状态都是 healthy 即成功
-```
-
-### 2. 配置并启动后端服务
-
-```bash
+# 2. 启动后端
 cd backend
-
-# 复制环境变量模板
 cp .env.example .env
-
-# 安装依赖
 npm install
-
-# 启动生产级演示服务
 node src/production-demo.js
-```
 
-你将看到完整的启动横幅界面，系统自动预置12个高质量演示商品，前4个直接启动为活跃状态。
-
-### 3. 启动前端服务
-
-新开一个终端窗口：
-
-```bash
+# 3. 启动前端（新终端）
 cd frontend
-
-# 安装依赖
 npm install
-
-# 启动前端开发服务器
 npm run dev
 ```
 
-访问地址：
-- **用户直播间**: http://localhost:5173
-- **商家/主播管理后台**: http://localhost:5173/admin
-- **健康检查**: http://localhost:3002/api/health
+- 用户端：<http://localhost:5173>
+- 管理后台：<http://localhost:5173/admin>
+- 健康检查：<http://localhost:3002/api/health>
 
----
+管理员账号的代码默认值是 `admin` / `admin123`，可由 `ADMIN_USERNAME`、
+`ADMIN_PASSWORD` 和 `ADMIN_PASSWORD_SALT` 覆盖。部署到公网前必须修改这三个值。
 
-## 📁 项目目录结构
+## 配置
 
-```
-/
-├── backend/                         # 后端服务
-│   ├── src/
-│   │   ├── config/
-│   │   │   ├── mysql.js           # MySQL连接池配置
-│   │   │   └── redis.js           # Redis客户端配置
-│   │   ├── services/
-│   │   │   ├── auctionService.js  # 竞拍核心业务逻辑
-│   │   │   └── redisService.js    # Redis操作封装服务
-│   │   ├── utils/
-│   │   │   └── distributedLock.js # Redis分布式锁实现
-│   │   ├── index.js               # 主入口（生产模式）
-│   │   ├── demo-mode.js           # 轻量演示模式（内存数据）
-│   │   ├── production-demo.js     # 生产级演示模式入口
-│   │   └── socketServer.js        # Socket.IO WebSocket服务
-│   ├── init.sql                    # MySQL数据库初始化脚本
-│   ├── .env                        # 环境变量配置
-│   ├── .env.example                # 环境变量模板
-│   └── package.json
-├── frontend/                        # 前端应用
-│   ├── src/
-│   │   ├── pages/
-│   │   │   ├── LiveRoom.tsx       # 用户端 - 竞拍选择页 + 实时直播间
-│   │   │   ├── MyOrders.tsx       # 用户端 - 我的订单/竞拍历史
-│   │   │   ├── AdminLogin.tsx     # 管理后台登录页
-│   │   │   └── admin/
-│   │   │       ├── AdminLayout.tsx # 管理后台主布局（侧边栏导航）
-│   │   │       ├── AuctionCreate.tsx   # 竞拍发布页面
-│   │   │       ├── AuctionManage.tsx   # 商品管理页面
-│   │   │       ├── AuctionMonitor.tsx  # 实时竞拍监控页面
-│   │   │       └── OrderManage.tsx     # 订单管理页面
-│   │   ├── types/
-│   │   │   └── index.ts           # TypeScript类型定义
-│   │   ├── App.tsx                 # 路由配置
-│   │   ├── main.tsx                # React入口
-│   │   └── index.css               # 全局样式（Tailwind配置）
-│   ├── index.html
-│   ├── package.json
-│   ├── vite.config.ts
-│   ├── tailwind.config.js
-│   └── tsconfig.json
-├── docker-compose.yml               # Docker Compose一键启动MySQL+Redis
-├── README.md                        # 本文件
-├── TECHNICAL_ARCHITECTURE.md        # 深度技术架构文档
+后端环境变量位于 `backend/.env`，完整列表见 `.env.example`。关键项：
 
+| 变量 | 默认值 | 说明 |
+| --- | --- | --- |
+| `PORT` | 3002 | 后端 HTTP 端口（代码默认） |
+| `REDIS_URL` | `redis://localhost:6379` | Redis 地址 |
+| `MYSQL_HOST` / `MYSQL_PORT` | localhost / 3306 | MySQL 地址 |
+| `MYSQL_DATABASE` | `auction_master` | 数据库名 |
+| `SEED_DEMO_DATA` | `auto` | `auto` / `force` / `never` |
+| `ADMIN_USERNAME` / `ADMIN_PASSWORD` | `admin` / `admin123` | 代码默认值，部署前修改 |
+
+## 目录
+
+```text
+backend/
+  src/
+    config/            MySQL、Redis 连接
+    services/          auctionService、redisService
+    utils/             distributedLock
+    socketServer.js    WebSocket 房间与心跳
+    production-demo.js 生产演示入口
+  init.sql             表结构
+frontend/
+  src/pages/           用户直播间、订单、管理后台
+docker-compose.yml     MySQL + Redis
+TECHNICAL_ARCHITECTURE.md  分层、机制、定时任务
 ```
 
----
+## 已知限制
 
-## ⚙️ 配置说明
-
-### 后端环境变量配置（backend/.env）
-
-| 配置项 | 默认值 | 说明 |
-|--------|--------|------|
-| PORT | 3002 | 后端HTTP服务监听端口 |
-| REDIS_URL | redis://localhost:6379 | Redis连接地址 |
-| MYSQL_HOST | localhost | MySQL主机地址 |
-| MYSQL_PORT | 3306 | MySQL端口 |
-| MYSQL_USER | root | MySQL用户名 |
-| MYSQL_PASSWORD |  | MySQL密码 |
-| MYSQL_DATABASE | auction_master | MySQL数据库名 |
-| SEED_DEMO_DATA | auto | 演示数据生成模式：auto/force/never |
-| ADMIN_USERNAME | admin | 管理后台登录用户名 |
-| ADMIN_PASSWORD | admin123 | 管理后台登录密码 |
-| ADMIN_PASSWORD_SALT | auction_master_secure_salt_2024 | PBKDF2密码哈希盐值 |
-
-### SEED_DEMO_DATA 三模式说明
-
-| 模式 | 适用场景 | 行为 |
-|-----|---------|------|
-| `auto`（默认） | 日常开发 | 只有auctions表完全为空时才自动生成12个演示商品，重启服务不丢失已有数据 |
-| `force` | 测试重置 | 强制清空所有表，重新生成全新演示数据 |
-| `never` | 正式生产运营 | 完全不自动生成任何演示数据，用户手动创建 |
-
----
-
----
-
-## 🎯 核心使用流程
-
-### 用户端流程
-1. 打开用户直播间首页，看到所有正在进行的竞拍卡片
-2. 点击任意竞拍进入实时直播间
-3. 建立WebSocket连接，接收商品信息、当前价格和毫秒级倒计时
-4. 点击"🔥 立即出价"按钮参与竞拍
-5. 体验领先🎉动画、被超越⚡震动反馈等沉浸式特效
-6. 竞拍结束后进入"我的订单"页查看参与历史和成交状态
-
-### 主播/商家后台流程
-1. 访问管理后台登录页，输入账号密码登录
-2. 在"竞拍发布"页填写商品信息和竞拍规则（起拍价、加价幅度、封顶价等）
-3. 进入"商品管理"页，找到待开始的竞拍，点击"开始"
-4. 全局广播通知所有在线用户端，新竞拍立即出现在用户端首页
-5. 在"实时监控"页观察竞拍实时状态、剩余时间和Top3排行榜
-6. 竞拍结束后自动生成订单，在"订单管理"页标记订单为已付款完成交易
-
----
-
-## 🔍 验证数据持久化
-
-### 查看MySQL中的数据
-```bash
-# 进入MySQL容器
-docker exec -it auction-master-mysql mysql -uroot -p auction_master
-
-# 执行SQL查询
-SHOW TABLES;
-SELECT id, name, status, current_price FROM auctions\G;
-SELECT * FROM bids ORDER BY created_at DESC;
-SELECT * FROM orders;
-```
-
-### 查看Redis中的数据
-```bash
-# 进入Redis容器
-docker exec -it auction-master-redis redis-cli
-
-# 查看所有auction相关的key
-KEYS auction:*
-
-```
-
----
-
----
-
-## 📈 性能指标预期
-
-| 指标项 | 预期值 | 说明 |
-|-------|--------|------|
-| 单房间并发连接数 | 1000+ | Socket.IO房间支持 |
-| 出价响应延迟 | < 5ms | 分布式锁+纯Redis操作，无同步MySQL写 |
-| 排行榜查询延迟 | < 10ms | ZSet O(logN) |
-| 系统可用性 | 高 | Redis自动恢复 + 3个心跳守护任务自愈 |
-| 数据库IO降低 | 90%+ | 异步批量落盘机制 |
-
----
-
-## 📚 更多文档
-
-- [TECHNICAL_ARCHITECTURE.md](./TECHNICAL_ARCHITECTURE.md) - 深度技术架构文档，完整讲解四层分层、核心高并发机制、三大定时任务等
-
----
-
-## 🎉 总结
-
-这是一个经过精心设计的生产级抖音电商直播竞拍全栈系统，完全符合真实高并发场景的业务需求，具备完整的用户侧和商家侧闭环体验。开箱即用，一打开用户端就能看到4个活跃竞拍卡片，立即开始沉浸式体验！
+- 压测脚本和原始日志未提交，复现需要自建压测客户端。
+- 演示账号和默认盐值是公开的，只适合本地演示。
+- `docker-compose.yml` 和 `.env.example` 是模板，不是开箱即用的完整配置。
+- 单机部署；没有做多实例下的分布式协调和 Redis 集群方案。
+- 前端偏演示性质，未做完整的支付、风控和审计。
