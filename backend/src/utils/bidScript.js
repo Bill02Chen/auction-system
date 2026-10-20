@@ -1,6 +1,6 @@
 // 出价原子脚本（#8）。
 // 目的：把「抢分布式锁 + 6 次 Redis 往返」压成一次原子操作。
-// 背景：抢锁失败即拒绝的设计，在同一毫秒 3000 次出价时只成交 1 次（见 修改清单.md 第 6.1 节）。
+// 背景：抢锁失败即拒绝的设计，在同一毫秒 3000 次出价时只成交 1 次（见 perf-run/logs/ 的突发轮次）。
 // Redis 单线程执行脚本，脚本之间天然串行，因此所有出价都会依次成交，价格逐次递增。
 // KEYS[1]=state KEYS[2]=ranking KEYS[3]=pending queue
 // ARGV[1..7]=auctionId, bidId, userId, userName, userAvatar, nowMs, createdAtIso

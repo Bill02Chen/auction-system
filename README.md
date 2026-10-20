@@ -81,6 +81,10 @@ React + TS ──HTTP/WebSocket── Node.js + Socket.IO
 | 原始分布式锁，同毫秒突发（日志轮次） | 0/3000（0.00%） | — | — | `20261011-002220-burst-1000u-x3-pace0.log` |
 | 下行广播消息 | 3,018,000 → 7,000 | — | — | 中间轮与最终轮 `/api/metrics` |
 
+![原始报告性能表](docs/original-benchmark.png)
+
+原始报告截图（300 人 / 1000 人对照）。
+
 补充：
 
 - 同毫秒突发 3000 笔后，Redis 价格严格递增，MySQL 落盘 3000 条，最高价一致；
@@ -186,9 +190,7 @@ bash perf-run/run-loadtest.sh burst 1000 3 0
 ```text
 backend/
   src/
-    controllers/        HTTP 控制器
-    models/             数据模型
-    middleware/         管理员鉴权
+    config/             MySQL、Redis 连接
     services/           auctionService、redisService
     utils/              bidScript（Lua）、distributedLock、metrics、logger
     index.js            生产入口
