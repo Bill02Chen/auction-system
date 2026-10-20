@@ -95,6 +95,22 @@ React + TS ──HTTP/WebSocket── Node.js + Socket.IO
 - Redis 状态丢失恢复目标是 1 个心跳（约 1 秒），演练脚本和日志在
   `perf-run/verify-ranking-recovery.sh`、`perf-run/server-outage.log`。
 
+## 界面
+
+用户端：
+
+| 直播间列表 | 实时出价 |
+| --- | --- |
+| <img src="docs/screenshots/live-list.png" width="260" alt="直播间列表"> | <img src="docs/screenshots/live-room.png" width="260" alt="实时出价"> |
+
+管理后台：
+
+| 实时监控 | 订单管理 |
+| --- | --- |
+| <img src="docs/screenshots/admin-monitor.png" width="720" alt="实时竞拍监控"> | <img src="docs/screenshots/admin-orders.png" width="720" alt="订单管理"> |
+
+截图中的“买家9836”等是系统生成的演示用户编号，不是真实用户。
+
 ## 证据
 
 **代码**

@@ -1,6 +1,6 @@
 #!/bin/bash
 # Redis 宕机演练驱动脚本。每一步都打时间戳。
-LOG=perf-run/drill-actions.log
+LOG="$(cd "$(dirname "$0")" && pwd)/drill-actions.log"
 export HOMEBREW_NO_AUTO_UPDATE=1
 RCLI="redis-cli -h 127.0.0.1 -p 6379"
 MYSQL_PASSWORD="${MYSQL_PASSWORD:-change-me}"
